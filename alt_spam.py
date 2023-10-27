@@ -59,6 +59,11 @@ def mouse_transition(loc):
         pyautogui.moveTo(x, y)
         pyautogui.sleep(delay)
 
+def click_mouse(btn):
+    pyautogui.mouseDown()
+    time.sleep(random.randint(75,95)/1000)
+    pyautogui.mouseUp()
+
 def explicit_room_check():
     with mss.mss() as sct:
         monitor = {"top": 547, "left": 40, "width": 400, "height": 100}
@@ -85,19 +90,19 @@ def crafting_loop(alt_loc,aug_loc,itm_loc,good_mod):
     done = False
     while not done:
         mouse_transition(alt_loc)
-        pyautogui.click()
+        click_mouse("left")
         #pyautogui.click(button='right')
         small_delay()
         mouse_transition(itm_loc)
-        pyautogui.click()
+        click_mouse("left")
         small_delay()
         if explicit_room_check():
             mouse_transition(aug_loc)
-            pyautogui.click()
+            click_mouse("left")
             #pyautogui.click(button='right')
             small_delay()
             mouse_transition(itm_loc)
-            pyautogui.click()
+            click_mouse("left")
             small_delay()
         if check_if_done(good_mod):
             break
