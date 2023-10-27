@@ -4,6 +4,12 @@
 this tool crafts items using orb of alterations and augmentations
 especially useful for +1 amulet crafts
 
+## prerequisites:
+-pywin32
+-pyautogui
+-bezier
+-pytesseract
+
 usage: 
 1. open currency tab and write a regex for your desired stats
 2. run the script, mouse will start to move so you cannot use your computer at this time
